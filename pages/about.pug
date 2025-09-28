@@ -1,0 +1,30 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar
+
+block variables
+	- pageName = 'About';
+
+block page
+	+rd-navbar
+	='\n'
+	
+	// Section Image
+	.section.section-md.bg-secondary-2-white
+		.container
+			+img( 'about-01-1270x755.jpg' ).rounded
+	='\n'
+	
+	// About
+	section.section.section-lg.bg-white
+		.container
+			h2.h6 About
+			.row.row-30
+				.col-md-6
+					h3 Curabitur mollis pellentesque odio in dignis sim. Quisque aliquam, justo id malesuada tincidunt, lorem eros tempor mauris, at consectetur.
+				.col-md-6
+					p Curabitur mollis pellentesque odio in dignis sim. Quisque aliquam, justo id malesuada tincidunt, lorem eros tempor mauris, at consectetur nisl est sit amet odio. Donec et porttitor elit, pretium sodales arcu.
+					p Phasellus volutpat suscipit ex sit amet ultrices. Morbi tempor lacus sapien, vel elementum odio rutrum ac. Cras id blandit neque. Proin justo ex, commodo eu neque sed, porttitor mattis mauris. Nunc lacus metus, pretium et justo id, vulputate dictum leo.
+					p Aenean fringilla, lectus non commodo pulvinar, mauris lacus sollicitudin lorem, at iaculis dolor turpis sed erat. Duis quam dui, condimentum a orci mattis, iaculis gravida est. In fringilla nisi eu sem.
+	='\n'
+	
+	include ../components/footer/_footer

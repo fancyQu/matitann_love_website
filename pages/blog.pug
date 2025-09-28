@@ -1,0 +1,108 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar
+include ../components/post/_post
+include ../components/pagination/_pagination
+
+block variables
+	- pageName = 'Category';
+
+block page
+	+rd-navbar
+	='\n'
+	
+	// Clean beauty
+	section.section.section-lg.bg-white.section-lg-top-115
+		.container.isotope-wrap
+			h1 Clean beauty
+			.row.row-xxl-132.row-xl-100.row-lg-60.row-30.isotope
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-01-390x488.jpg',
+						title: 'The best clean beauty brands and products'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-02-390x224.jpg',
+						title: 'Clean skincare: what you need to know'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-03-390x353.jpg',
+						title: 'New mom’s guide to organic products'
+					})
+				
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-04-390x307.jpg',
+						title: '7 effective remedies for teen acne'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-05-390x415.jpg',
+						title: 'Oil of oregano: more than a cold remedy'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-06-390x302.jpg',
+						title: '14 amazing benefits of aloe vera'
+					})
+				
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-07-390x353.jpg',
+						title: 'Top 10 facts about toothpaste you didn\'t know about'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-08-390x488.jpg',
+						title: 'Veggie nutrition: eat the skins, stems, and tops!'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-09-390x353.jpg',
+						title: 'Dangerous makeup: what you don’t know can hurt you'
+					})
+				
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-10-390x302.jpg',
+						title: 'Skin care products: steer clear of these 5 ingredients'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-11-390x415.jpg',
+						title: 'How long do you really need to wash your hands?'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-12-390x224.jpg',
+						title: '31 new ways to use essential oils everywhere'
+					})
+				
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-13-390x224.jpg',
+						title: 'What you should know about stress and collagen'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-14-390x307.jpg',
+						title: '7 healthy benefits of collagen'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'blog-15-390x488.jpg',
+						title: 'Collagen: vital for skin care, joint and bone health'
+					})
+			+pagination-bs([
+				{ value: '1', actionClass: 'active' },
+				{ value: '2' },
+				{ value: '3' },
+				{ value: '4' },
+				{ value: '5' },
+				{ value: '..', class: 'inactive' },
+				{ value: '10' }
+			]).justify-content-center
+	='\n'
+	
+	include ../components/footer/_footer

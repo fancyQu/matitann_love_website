@@ -1,0 +1,48 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar
+
+block variables
+	- pageName = 'Contact Us';
+
+block page
+	+rd-navbar
+	='\n'
+	
+	// Section Image
+	.section.section-md.bg-secondary-2-white
+		.container
+			+img( 'contact-us-01-1270x755.jpg' ).rounded
+	='\n'
+	
+	// About
+	section.section.section-lg.bg-white
+		.container
+			h2.h6 Have a question?
+			p Shoot us a message below and we’ll be sure to get back to you as soon as we can. Thanks!
+			form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+				.row.row-22
+					.col-md-6
+						.form-group
+							label( for='input-name' ) Name*
+							.position-relative
+								input.form-control( id='input-name', type='text', name='name', placeholder='Write your name here', data-constraints='@Required' )
+					.col-md-6
+						.form-group
+							label( for='input-email' ) Email*
+							.position-relative
+								input.form-control( id='input-email', type='email', name='email', placeholder='Let us know how to get in touch with you', data-constraints='@Email @Required' )
+					.col-12
+						.form-group
+							label( for='input-question' ) Message*
+							.position-relative
+								textarea.form-control( id='input-question', name='question', placeholder='Enter your message', data-constraints='@Required' )
+				.offset-sm
+					.custom-control.custom-checkbox
+						input.custom-control-input( type='checkbox', id='check1', data-constraints='@Required' )
+						label.custom-control-label( for='check1' ) I agree to the
+						a.font-weight-bold( href='privacy-policy.html' ) Privacy Policy.
+				.offset-lg
+					button.btn.btn-lg.btn-primary( type='submit' ) Send message
+	='\n'
+	
+	include ../components/footer/_footer

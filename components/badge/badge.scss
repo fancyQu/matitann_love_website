@@ -1,0 +1,25 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+@import "../bootstrap/scss/badge";
+
+
+// Base
+.badge {
+	background-color: $primary;
+	color: $white;
+
+	& + h1 {
+		margin-top: 20px;
+	}
+}
+
+a.badge {
+	&:hover {
+		background-color: $secondary;
+		color: $white;
+	}
+}

@@ -1,0 +1,73 @@
+-
+	var
+		logo = {
+			default: 'logo-default-204x38.svg',
+			inverse: 'logo-inverse-204x38.svg',
+			name: 'HealthReads'
+		},
+
+		buyLink = 'https://www.templatemonster.com/intense-multipurpose-html-template.html',
+
+		links = {
+			post: 'single-post.html'
+		},
+
+		menu = {
+			type: 'root',
+			child: [
+				{
+					title: 'Home',
+					link: 'index.html'
+				},
+
+				{ title: 'About' },
+
+				{
+					title: 'Categories',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{
+								title: 'Clean beauty',
+								link: 'blog.html'
+							},
+							{
+								title: 'Healthy eating',
+								link: 'blog.html'
+							},
+							{
+								title: 'Wellness',
+								link: 'blog.html'
+							},
+							{ title: 'Single post' }
+						]
+					}
+				},
+
+				{
+					title: 'Pages',
+					link: '#',
+					child: {
+						type: 'dropdown',
+						child: [
+							{ title: 'Typography' },
+							{ title: 'Buttons' },
+							{ title: 'Grid system' },
+							{ title: 'Search results' },
+							{ title: 'Privacy policy' }
+						]
+					}
+				},
+
+				{ title: 'Contact Us' }
+			]
+		},
+
+		homePage,
+		pageName,
+		pageId,
+		pageClass,
+		pageImage,
+		htmlClass,
+		breadcrumbs = [];

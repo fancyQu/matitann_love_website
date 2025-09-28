@@ -1,0 +1,2 @@
+.quote-simple {	position: relative;	color: #1B17A5;	padding-left: 74px;	padding-top: 12px;}* + .quote-simple {	margin-top: 30px;}@media (min-width: 1200px) {	* + .quote-simple {		margin-top: 60px;	}}@media (min-width: 1400px) {	* + .quote-simple {		margin-top: 95px;	}}.quote-simple-icon {	position: absolute;	top: 0;	left: 0;}.quote-simple-text::after {	content: '\"';	font-style: italic;}.quote-simple-author {	font-weight: 700;	color: #000056;}
+/*# sourceMappingURL=quote.css.map */

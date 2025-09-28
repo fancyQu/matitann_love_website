@@ -1,0 +1,38 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+.post-meta {
+	display: flex;
+	flex-direction: column;
+	@include group(20px);
+	font-size: $font-size-sm;
+	color: $secondary-4;
+
+	@include media-breakpoint-up(md) {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	* + & {
+		margin-top: 22px;
+	}
+}
+
+.post-meta-col {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	@include group(17px);
+}
+
+.post-meta-link {
+	font-weight: 700;
+
+	&:hover {
+		color: $secondary-5;
+	}
+}

@@ -1,0 +1,142 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+
+// Variables
+$sr-fsz: $font-size-sm;
+$sr-border: 1px solid $border-color;
+$sr-background: $secondary;
+$sr-offset: 43px;
+
+$sr-count-fsz: $h5-font-size;
+$sr-count-fw: $headings-font-weight;
+$sr-count-lh: $h5-line-height;
+$sr-count-color: $headings-color;
+$sr-match-color: $secondary;
+
+
+// Base
+.rd-search-results {
+	.search-list {
+		font-size: $sr-fsz;
+		counter-reset: li;
+		list-style-type: none;
+
+		li:only-child::before {
+			display: none;
+		}
+	}
+
+	.search-list-item {
+		position: relative;
+		padding-left: 35px;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			top: 0;
+			font-size: 19px;
+			line-height: 1.35;
+			font-weight: $sr-count-fw;
+			color: $sr-count-color;
+			content: counter( li, decimal ) '.';
+			counter-increment: li;
+		}
+
+		&:not( :last-child ) {
+			padding-bottom: $sr-offset/2;
+			border-bottom: $sr-border;
+		}
+	}
+
+	.match {
+		color: $sr-match-color;
+
+		em {
+			font-style: normal;
+		}
+	}
+
+	.search {
+		background-color: rgba( $sr-background, .1 );
+	}
+
+	* + p { margin-top: 2px }
+	* + .match { margin-top: 6px }
+	.search-list-item + .search-list-item { margin-top: $sr-offset/2; }
+}
+
+
+// Context dark
+.context-dark {
+	.rd-search-results {
+		.search-list-item {
+			&::before {
+				color: inherit;
+			}
+		}
+	}
+}
+
+
+// Media
+@include media-breakpoint-up( lg ) {
+	.rd-search-results {
+		.search-list-item {
+			padding-left: 43px;
+
+			&:before {
+				font-size: $sr-count-fsz;
+				line-height: $sr-count-lh;
+			}
+
+			&:not( :last-child ) {
+				padding-bottom: $sr-offset;
+			}
+		}
+
+		.search-list-item + .search-list-item { margin-top: $sr-offset; }
+	}
+}
+
+
+.search-wide {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	@include group(20px);
+
+	.form-wrap {
+		position: relative;
+		flex-grow: 1;
+		min-width: 250px;
+	}
+}
+
+.search-wide-input {
+	display: block;
+	width: 100%;
+	padding-right: 30px;
+	border: 0;
+	border-bottom: 1px solid $gray-400;
+}
+
+.search-wide-btn {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	transition: $transition-base;
+
+	&:hover {
+		color: $secondary-5;
+	}
+}
+
+.search-wide-title {
+	color: $secondary;
+}

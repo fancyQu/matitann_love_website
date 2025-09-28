@@ -1,0 +1,43 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+.quote-simple {
+	position: relative;
+	color: $primary;
+	padding-left: 74px;
+	padding-top: 12px;
+
+	* + & {
+		margin-top: 30px;
+
+		@include media-breakpoint-up(xl) {
+			margin-top: 60px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			margin-top: 95px;
+		}
+	}
+}
+
+.quote-simple-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.quote-simple-text {
+
+	&::after {
+		content: '\"';
+		font-style: italic;
+	}
+}
+
+.quote-simple-author {
+	font-weight: 700;
+	color: $secondary;
+}

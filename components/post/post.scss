@@ -1,0 +1,68 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Vertical
+.post-vertical {
+	max-width: 390px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.post-vertical-figure {
+	position: relative;
+	display: flex;
+}
+
+.post-vertical-badge {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.post-vertical-time {
+	display: block;
+}
+
+* + .post-vertical-time {
+	margin-top: 15px;
+}
+
+
+// Horizontal
+.post-horizontal {
+	display: flex;
+	@include group(30px);
+
+	& + & {
+		margin-top: 30px;
+
+		@include media-breakpoint-up(xxl) {
+			margin-top: 50px;
+		}
+	}
+}
+
+.post-horizontal-figure {
+	flex-shrink: 0;
+	line-height: 0;
+}
+
+.post-horizontal-body {
+	margin-top: 5px;
+
+	@include media-breakpoint-up(xl) {
+		max-height: 125px;
+	}
+}
+
+.post-horizontal-time {
+	display: block;
+}
+
+* + .post-horizontal-time {
+	margin-top: 13px;
+}

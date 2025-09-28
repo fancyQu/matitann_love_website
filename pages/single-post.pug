@@ -1,0 +1,188 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar
+include ../components/pag/_pag
+include ../components/post/_post
+include ../components/comment/_comment
+include ../components/input/_input
+
+block variables
+	- pageName = 'Single post';
+
+block page
+	+rd-navbar
+	='\n'
+	
+	// Post
+	section.section.section-lg.bg-white
+		.container
+			.row.justify-content-center
+				.col-xl-8.col-lg-10
+					.badge Clean beauty
+					h1 The best non-toxic <br class='d-none d-xl-block'> face moisturizers
+					.post-meta.justify-content-between
+						div: .post-meta-col
+							.post-meta-item by <a class='post-meta-link' href='#'>Adam Smith</a>
+							.post-meta-item: time( datetime='2020' ) January 16, 2020
+						div: .post-meta-col
+							.post-meta-item
+								svg.icon.svg-icon(width='15', height='13')
+									path(d='M7.5 0C6.44531 0 5.45898 0.149425 4.54102 0.448276C3.63281 0.747126 2.8418 1.16272 2.16797 1.69504C1.49414 2.21803 0.961914 2.83441 0.571289 3.54418C0.19043 4.25395 0 5.01509 0 5.82759C0 6.64943 0.195312 7.4199 0.585938 8.13901C0.986328 8.85812 1.52344 9.48851 2.19727 10.0302C2.88086 10.5718 3.67676 11.0014 4.58496 11.319C5.49316 11.6272 6.46484 11.7812 7.5 11.7812C7.82227 11.7812 8.14453 11.7626 8.4668 11.7252C8.78906 11.6879 9.11133 11.6365 9.43359 11.5711L12.9492 12.972C12.9785 12.9813 13.0078 12.9907 13.0371 13C13.0664 13 13.0957 13 13.125 13C13.1738 13 13.2227 12.9953 13.2715 12.986C13.3203 12.9673 13.3643 12.944 13.4033 12.9159C13.4619 12.8693 13.5107 12.8132 13.5498 12.7478C13.5889 12.6731 13.6035 12.5984 13.5938 12.5237L13.3594 9.53987C13.8867 9.00754 14.292 8.42385 14.5752 7.78879C14.8584 7.15374 15 6.5 15 5.82759C15 5.01509 14.8047 4.25395 14.4141 3.54418C14.0332 2.83441 13.5059 2.21803 12.832 1.69504C12.1582 1.16272 11.3623 0.747126 10.4443 0.448276C9.53613 0.149425 8.55469 0 7.5 0ZM12.5537 9.04957C12.5049 9.08692 12.4658 9.13829 12.4365 9.20366C12.417 9.26904 12.4121 9.33441 12.4219 9.39978L12.5977 11.8653L9.65332 10.6886C9.62402 10.6792 9.59473 10.6746 9.56543 10.6746C9.53613 10.6652 9.50684 10.6606 9.47754 10.6606C9.45801 10.6606 9.43848 10.6606 9.41895 10.6606C9.39941 10.6606 9.37988 10.6652 9.36035 10.6746C9.05762 10.7399 8.75 10.7913 8.4375 10.8287C8.125 10.866 7.8125 10.8847 7.5 10.8847C6.5918 10.8847 5.7373 10.754 4.93652 10.4925C4.14551 10.2216 3.45215 9.8574 2.85645 9.39978C2.27051 8.94217 1.80176 8.40984 1.4502 7.8028C1.1084 7.18642 0.9375 6.52802 0.9375 5.82759C0.9375 5.13649 1.10352 4.4921 1.43555 3.8944C1.77734 3.28736 2.24121 2.76437 2.82715 2.32543C3.42285 1.87716 4.12109 1.52694 4.92188 1.27478C5.72266 1.02263 6.58203 0.896552 7.5 0.896552C8.41797 0.896552 9.27734 1.02263 10.0781 1.27478C10.8789 1.52694 11.5723 1.87716 12.1582 2.32543C12.7539 2.76437 13.2178 3.28736 13.5498 3.8944C13.8916 4.4921 14.0625 5.13649 14.0625 5.82759C14.0625 6.41595 13.9307 6.98563 13.667 7.53664C13.4131 8.08764 13.042 8.59195 12.5537 9.04957Z')
+								span.ml-2 2
+							.post-meta-item.
+								tags:
+								<a class='post-meta-link' href='#'>beauty</a>,
+								<a class='post-meta-link' href='#'>clean</a>,
+								<a class='post-meta-link' href='#'>cosmetics</a>,
+								<a class='post-meta-link' href='#'>organic</a>
+					+img( 'post-01-830x494.jpg' ).rounded.offset-lg
+					p.offset-lg Curabitur mollis pellentesque odio in dignis sim. Quisque aliquam, justo id malesuada tincidunt, lorem eros tempor mauris, at consectetur nisl est sit amet odio. Donec et porttitor elit, pretium sodales arcu. Phasellus volutpat suscipit ex sit amet ultrices.
+					p Morbi tempor lacus sapien, vel elementum odio rutrum ac. Cras id blandit neque. Proin justo ex, commodo eu neque sed, porttitor mattis mauris. Nunc lacus metus, pretium et justo.
+					h3 1. The recommended selection of organic skin moisturizers that you can afford
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dui felis, molestie non fermentum et, rhoncus rhoncus tortor. In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet justo ullamcorper. Nullam vel velit id neque tristique volutpat. Nunc aliquam maximus dolor, non rutrum nisl pretium vel. Donec quis purus lectus.
+					p Integer dui felis, molestie non fermentum et, rhoncus rhoncus tortor. In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet.  Nullam vel velit id neque tristique volutpat. Nunc aliquam maximus dolor, non rutrum nisl pretium vel.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dui felis, molestie non fermentum et, rhoncus rhoncus tortor. In vel blandit leo, nec ultrices risus. Aliquam erat volutpat. Integer egestas arcu non nisl aliquam dapibus. Integer auctor sit amet lorem eu placerat.
+					ul.list.list-ordered.font-weight-bold.text-primary
+						li.list-item Consectetur adipiscing elitr dui felis
+						li.list-item Molestie non fermentum rhoncus rhoncus
+						li.list-item Cras fringilla viverra lorem, ac venenatis
+						li.list-item Aenean ornare elit sit amet justo ullamcorpe
+					p Integer dui felis, molestie non fermentum et, rhoncus. In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet justo ullamcorper.
+					blockquote.quote-simple
+						svg.icon.svg-icon.quote-simple-icon(width='53', height='37')
+							path(d='M30.2966 37L29.2335 35.3752C29.9422 32.7166 30.7775 29.8856 31.7393 26.8822C32.7517 23.8789 33.84 20.851 35.0043 17.7984C36.1686 14.7458 37.4088 11.7179 38.7249 8.71457C40.0411 5.66201 41.3319 2.75715 42.5974 0H53C52.2407 3.00333 51.4814 6.12974 50.7221 9.37924C50.0134 12.6287 49.33 15.8782 48.6719 19.1277C48.0139 22.328 47.4064 25.4544 46.8496 28.507C46.2927 31.5595 45.8118 34.3906 45.4069 37H30.2966ZM1.06304 37L0 35.3752C0.708692 32.7166 1.54394 29.8856 2.50573 26.8822C3.51815 23.8789 4.6065 20.851 5.77077 17.7984C6.93505 14.7458 8.17526 11.7179 9.4914 8.71457C10.8075 5.66201 12.0984 2.75715 13.3639 0H23.7665C23.0072 3.00333 22.2479 6.12974 21.4885 9.37924C20.7798 12.6287 20.0965 15.8782 19.4384 19.1277C18.7803 22.328 18.1729 25.4544 17.616 28.507C17.0592 31.5595 16.5783 34.3906 16.1734 37H1.06304Z')
+						q.h5.quote-simple-text Nullam scelerisque lacus quis libero tempor faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+						p.quote-simple-author Roy Fowler
+	='\n'
+	
+	// Post
+	section.section.section-lg.bg-white
+		.container
+			.row.justify-content-center
+				.col-xl-8.col-lg-10
+					h3 2. Several valuable tips on using skin moisturizers properly
+					p In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet justo ullamcorper. Nullam vel velit id neque tristique volutpat. Nunc aliquam maximus dolor, non rutrum nisl.
+					+img( 'post-02-830x494.jpg' ).rounded.offset-lg
+					h5.offset-lg 2.1 A short list of tips to follow when using natural & organic moisturizer products for your skin
+					p In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet justo ullamcorper. Nullam vel velit id neque tristique volutpat. Nunc aliquam maximus dolor, non rutrum nisl.
+					ul.list.list-marked.font-weight-bold.text-primary
+						li.list-item Consectetur adipiscing elitr dui felis
+						li.list-item Molestie non fermentum rhoncus rhoncus
+						li.list-item Cras fringilla viverra lorem, ac venenatis
+						li.list-item Aenean ornare elit sit amet justo ullamcorpe
+	='\n'
+	
+	// Post
+	section.section.section-lg.bg-white
+		.container
+			.row.justify-content-center
+				.col-xl-8.col-lg-10
+					h3 3. Our personal recommendation to those who are new to using skin moisturizers
+					p In vel blandit leo, nec ultrices risus. Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisi a maximus. Aenean ornare elit sit amet justo ullamcorper. Nullam vel velit id neque tristique volutpat. Nunc aliquam maximus dolor, non rutrum nisl.
+					+pag-extended({
+						prevTitle: 'Healthy eating without a label',
+						prevBtn:   'Prev',
+						prevImage: 'post-03-110x130.jpg',
+						nextTitle: 'New mom’s guide to organic products',
+						nextBtn:   'Next',
+						nextImage: 'post-04-110x130.jpg'
+					})
+	='\n'
+	
+	// You might also like
+	section.section.section-lg.bg-secondary-2
+		.container
+			h2.h6 You might also like
+			.row.row-30.row-xxl-50
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-05-110x130',
+						title: 'The best clean beauty brands and products'
+					})
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-06-110x130',
+						title: 'Thrive market review Favorite items to buy'
+					})
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-07-110x130',
+						title: 'Clean skincare: what you need to know'
+					})
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-08-110x130',
+						title: '7 effective remedies for teen acne'
+					})
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-09-110x130',
+						title: 'Living healthy: 8 reasons to eat more vegetables every day'
+					})
+				.col-xl-4.col-md-6
+					+post-horizontal({
+						img:   'post-10-110x130',
+						title: 'New mom’s guide to organic products'
+					})
+	='\n'
+	
+	// Comments
+	section.section.section-lg.bg-white
+		.container
+			h2.h6 2 comments
+			+comment({
+				img:  'post-11-110x110.jpg',
+				name: 'Eva Smith',
+				text: 'Cras fringilla viverra lorem, ac venenatis metus ullamcorper id. Suspendisse interdum at nisia maximus. Commodo dolor ac lectus posuere, quis elementum arcu fringilla. Curabitur dignissim varius diam id faucibus. Aenean et sagittis sapien.'
+			}).comment-cloud
+				+comment({
+					img:  'post-12-110x110.jpg',
+					name: 'Jane  Adams',
+					text: 'Ei sumo eruditi sadipscing nec, scripta epicurei ut eam. Duo ut fastidii platonem, eu soleat salutandi neglegentur est. Erant harum malorum eum ne, his ut scaevola consectetuer, duo ex suavitate liberavisse. Has brute graecis an, quis docendi.'
+				}).comment-cloud
+			+comment({
+				img:  'post-13-110x110.jpg',
+				name: 'Patricia Evans',
+				text: 'Cu facer nobis feugait mel, his velit tation ea. Vel nihil percipitur ei. Fugit option oportere est in, te dignissim philosophia mea, duo diceret eruditi ea. In eum porro bonorum, ut stet partiendo efficiantur vis. No errem platonem consectetuer quo, legimus tincidunt percipitur pri id.'
+			}).comment-cloud
+	='\n'
+	
+	// Write your comment
+	section.section.section-lg.bg-white
+		.container
+			h2.h6 Write your comment
+			p Your email address will not be published. Required fields are marked*
+			form.rd-mailform( data-form-output='form-output-global', data-form-type='contact', method='post', action='components/rd-mailform/rd-mailform.php' )
+				.row.row-22
+					.col-12
+						.form-group
+							label( for='input-question' ) Comment*
+							.position-relative
+								textarea.form-control( id='input-question', name='question', placeholder='Enter the text of your comment', data-constraints='@Required' )
+					.col-md-6
+						.form-group
+							label( for='input-name' ) Name*
+							.position-relative
+								input.form-control( id='input-name', type='text', name='name', placeholder='Write your name here', data-constraints='@Required' )
+					.col-md-6
+						.form-group
+							label( for='input-email' ) Email*
+							.position-relative
+								input.form-control( id='input-email', type='email', name='email', placeholder='Let us know how to get in otuch with you', data-constraints='@Email @Required' )
+					.col-12
+						.form-group
+							label( for='input-site' ) Website*
+							.position-relative
+								input.form-control( id='input-site', type='text', name='site', placeholder='Enter your website here', data-constraints='@Required' )
+					
+				.offset-sm
+					.custom-control.custom-checkbox
+						input.custom-control-input( type='checkbox', id='check1', data-constraints='@Required' )
+						label.custom-control-label( for='check1' ) I agree to the
+						a.font-weight-bold( href='privacy-policy.html' ) Privacy Policy.
+				.offset-lg
+					button.btn.btn-primary( type='submit' ) Submit
+
+		#form-output-global.form-output.snackbar.snackbar-secondary
+	='\n'
+	
+	include ../components/footer/_footer

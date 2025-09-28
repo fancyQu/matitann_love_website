@@ -1,0 +1,16 @@
+mixin post-vertical( obj )
+	article.post.post-vertical
+		figure.post-vertical-figure
+			a.link-image.rounded( href= links.post ): +img( obj.img )
+			-if ( obj.badge )
+				figcaption: a.post-vertical-badge.badge( href= links.post )= obj.badge
+		h5.post-vertical-title: a( href= links.post )= obj.title
+		time.post-vertical-time( datetime='2020' ) January 16, 2020
+
+mixin post-horizontal( obj )
+	article.post.post-horizontal
+		figure.post-horizontal-figure
+			a.link-image.rounded( href= links.post ): +img( obj.img )
+		.post-horizontal-body
+			h5.post-horizontal-title: a( href= links.post )= obj.title
+			time.post-horizontal-time( datetime='2020' ) January 16, 2020

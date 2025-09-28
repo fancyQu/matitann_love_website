@@ -1,0 +1,2 @@
+.link-image {	display: inline-block;	overflow: hidden;}.link-image img {	transition: all 0.2s ease-in-out;}.link-image:hover img {	transform: scale(1.05) rotate(1deg);	opacity: .95;}
+/*# sourceMappingURL=link-image.css.map */

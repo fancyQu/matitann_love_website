@@ -1,0 +1,25 @@
+//- Comment
+	@param {object} obj - data object
+	@param {string} obj.img - comment image
+	@param {string} obj.name - meta name
+	@param {string} obj.time - meta time
+	@param {string} obj.text - quote text
+mixin comment( obj )
+	.comment&attributes( attributes )
+		.media.media-lg.flex-column.flex-sm-row
+			.media-left
+				+img( obj.img ).comment-image.rounded
+			.media-body
+				.comment-body
+					.comment-panel
+						ul.comment-meta
+							li.comment-meta-item='by '
+								span.font-weight-bold.text-secondary= obj.name
+							li.comment-meta-item
+								time.font-weight-medium( datetime='2020' ) January 16, 2020
+						a.comment-link( href='#' )
+							svg.svg-icon.text-secondary(width='14', height='12')
+								path(d='M6.53333 11.5714V8.14286C7.71944 8.14286 8.68681 8.20982 9.43542 8.34375C10.1938 8.47768 10.8354 8.69643 11.3604 9C11.8854 9.30357 12.3424 9.70089 12.7313 10.192C13.1201 10.683 13.5431 11.2857 14 12V10.4464C14 9.28571 13.8396 8.27679 13.5188 7.41964C13.1979 6.55357 12.7215 5.83482 12.0896 5.26339C11.4674 4.68304 10.6896 4.24107 9.75625 3.9375C8.83264 3.63393 7.75833 3.46429 6.53333 3.42857V0L0 5.57143L6.53333 11.5714Z')
+							span Reply
+					.comment-text= obj.text
+		block

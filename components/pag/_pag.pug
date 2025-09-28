@@ -1,0 +1,64 @@
+//- Pagination simple
+	@param {array} data - pagination data array
+	@param {object} item - single item object
+	@param {string} item.value - item value
+	@param {string} [item.prev] - set prev button to pagination
+	@param {string} [item.next] - set next button to pagination
+	@param {string} [item.actionClass] - add action class to item
+mixin pag-simple( data )
+	ul.pag.pag-simple&attributes( attributes )
+		each item in data
+			li.pag-simple-item( class= item.actionClass )
+				if (item.prev)
+					a.pag-simple-link.pag-simple-link-prev( href='#' )
+						span.int-arrow-left.novi-icon
+						span Prev
+				else if (item.next)
+					a.pag-simple-link.pag-simple-link-next( href='#' )
+						span Next
+						span.int-arrow-right.novi-icon
+				else
+					a.pag-simple-link( class= (item.class ? item.class : ''), href='#' )= item.value
+
+//- Pagination extended
+	@param {array} data - pagination data array
+	@param {object} data.prevTitle - previous title text
+	@param {string} data.prevBtn - previous button text
+	@param {string} data.nextTitle - next title text
+	@param {string} data.nextBtn - next button text
+mixin pag-extended( data )
+	.pag.pag-extended&attributes( attributes )
+		a.pag-extended-item.pag-extended-item-prev( href='#' )
+			.pag-extended-link
+				svg.icon.svg-icon(width='6', height='10')
+					path(d='M5.76036 9.76877C6.07988 9.46046 6.07988 8.96059 5.76036 8.65228L1.97527 5L5.76036 1.34772C6.07988 1.03941 6.07988 0.53954 5.76036 0.231232C5.44084 -0.0770772 4.9228 -0.0770772 4.60328 0.231232L0.23964 4.44176C-0.0798799 4.75007 -0.0798799 5.24993 0.23964 5.55824L4.60328 9.76877C4.9228 10.0771 5.44084 10.0771 5.76036 9.76877Z')
+				span= data.prevBtn
+			.pag-extended-body
+				+img( data.prevImage ).rounded
+				.pag-extended-content
+					h5.pag-extended-title= data.prevTitle
+					p.pag-extended-time: time( datetime='2020' ) January 16, 2020
+		
+		a.pag-extended-item.pag-extended-item-next( href='#' )
+			.pag-extended-link
+				span= data.nextBtn
+				svg.icon.svg-icon(width='6', height='10')
+					path(d='M0.23964 9.76877C-0.07988 9.46046 -0.07988 8.96059 0.23964 8.65228L4.02473 5L0.23964 1.34772C-0.0798804 1.03941 -0.0798804 0.539539 0.239639 0.231232C0.559159 -0.0770769 1.0772 -0.077077 1.39672 0.231232L5.76036 4.44176C6.07988 4.75007 6.07988 5.24993 5.76036 5.55824L1.39672 9.76877C1.0772 10.0771 0.55916 10.0771 0.23964 9.76877Z')
+			.pag-extended-body
+				+img( data.nextImage ).rounded
+				.pag-extended-content
+					h5.pag-extended-title= data.nextTitle
+					p.pag-extended-time: time( datetime='2020' ) January 16, 2020
+
+//- Pagination short
+	@param {array} data - pagination data array
+	@param {string} data.prevBtn - previous button text
+	@param {string} data.nextBtn - next button text
+mixin pag-short( data )
+	.pag.pag-short&attributes( attributes )
+		a.pag-short-link.pag-short-link-prev( href='#' )
+			span.pag-short-arrow.int-arrow-left.novi-icon
+			span= data.prevBtn
+		a.pag-short-link.pag-short-link-next( href='#' )
+			span= data.nextBtn
+			span.pag-short-arrow.int-arrow-right.novi-icon

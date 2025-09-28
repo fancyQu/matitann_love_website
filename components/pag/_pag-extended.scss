@@ -1,0 +1,102 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+.pag-extended {
+	@include group(30px);
+
+	@include media-breakpoint-up(md) {
+		@include group(50px);
+	}
+
+	* + & {
+
+		@include media-breakpoint-up(md) {
+			margin-top: 70px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			margin-top: 140px;
+		}
+	}
+}
+
+.pag-extended-item {
+	position: relative;
+	flex-basis: 50%;
+
+	> * {
+		pointer-events: none;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+		box-shadow: $box-shadow-sm;
+		border-radius: $border-radius;
+		transition: $transition-base;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+.pag-extended-item-next {
+	text-align: right;
+
+	.pag-extended-body {
+		align-items: flex-end;
+
+		@include media-breakpoint-up(md) {
+			align-items: flex-start;
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+.pag-extended-link {
+	display: inline-flex;
+	align-items: center;
+	font-weight: 700;
+
+	> * + * {
+		margin-left: 20px;
+	}
+}
+
+.pag-extended-body {
+	display: flex;
+	flex-direction: column;
+	@include group(30px, 23px);
+
+	@include media-breakpoint-up(md) {
+		flex-direction: row;
+	}
+
+	* + & {
+		margin-top: 23px;
+	}
+}
+
+.pag-extended-content {
+	margin-top: 5px;
+}
+
+.pag-extended-time {
+	* + & {
+		margin-top: 7px;
+	}
+}
+

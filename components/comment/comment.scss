@@ -1,0 +1,163 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.comment {
+
+	* + & {
+		margin-top: 35px;
+
+		@include media-breakpoint-up(xl) {
+			margin-top: 68px;
+		}
+	}
+
+	> .comment {
+		@include media-breakpoint-up(sm) {
+			margin-left: 55px;
+		}
+
+		@include media-breakpoint-up(md) {
+			margin-left: 110px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			margin-left: 156px;
+		}
+	}
+}
+
+.comment-icon {
+	text-align: center;
+	height: 60px;
+	width: 60px;
+	font-size: 18px;
+	line-height: 60px;
+	border-radius: 50%;
+	color: $headings-color;
+	background-color: $gray-200;
+}
+
+.comment-panel {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	font-size: $font-size-sm;
+	color: $secondary-4;
+	@include group(30px, 15px);
+}
+
+.comment-text {
+	* + & {
+		margin-top: 22px;
+	}
+}
+
+.comment-link {
+	color: inherit;
+
+	span {
+		margin-left: 10px;
+	}
+}
+
+.comment-meta-item {
+	& + & {
+		margin-left: 17px;
+	}
+}
+
+
+// Spacing
+* + .comment-rating {
+	margin-top: 10px;
+}
+
+* + .comment-panel {
+	margin-top: px-to-rem( 16px );
+}
+
+.btn + .comment {
+	margin-top: px-to-rem( 40px );
+}
+
+
+// Comment cloud
+.comment-cloud {
+	.comment-body {
+		position: relative;
+		padding: 5.6% 7.3% 5.7% 6.3%;
+		border-radius: $border-radius;
+		border: 1px solid $border-color;
+		background-color: $white;
+		z-index: 1;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 19px;
+			left: -1px;
+			width: 2%;
+			padding-bottom: 1.9%;
+			background: inherit;
+			border-style: solid;
+			border-width: 1px 0 0 1px;
+			border-color: inherit;
+			transform-origin: 50% 0;
+			transform: translateX(-100%) skewX(45deg);
+			z-index: -1;
+		}
+	}
+
+	.comment-cloud {
+		.comment-body {
+			padding: 6.6% 8.4% 6.6% 7.3%;
+		}
+	}
+}
+
+
+// Comment bordered
+.comment-bordered {
+
+	> .comment-bordered {
+		border-top: 1px solid $border-color;
+		padding-top: 35px;
+	}
+
+	+ .comment-bordered {
+		margin-top: 35px;
+		padding-top: 35px;
+		border-top: 1px solid $border-color;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(sm) {
+	.comment-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+}
+
+@include media-breakpoint-up(md) {
+
+	.comment-bordered {
+		+ .comment-bordered {
+			margin-top: 65px;
+			padding-top: 65px;
+		}
+	}
+
+	.btn + .comment {
+		margin-top: px-to-rem( 54px );
+	}
+}

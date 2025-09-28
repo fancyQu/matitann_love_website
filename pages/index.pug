@@ -1,0 +1,253 @@
+extends ../components/base/_skeleton
+include ../components/rd-navbar/_rd-navbar
+include ../components/post/_post
+
+block variables
+	- pageName = 'Home';
+
+block page
+	+rd-navbar
+	='\n'
+	
+	// Intro
+	section.section.section-md.bg-secondary-2
+		.container
+			.swiper-container.swiper-creative( data-swiper!= {
+				pagination: { type: 'fraction' },
+				effect: 'fade'
+			})
+				.swiper-wrapper
+					// Slides
+					.swiper-slide( style='background-image: url( images/home-01-830x655.jpg )' )
+						.row
+							.col-sm-7
+								h1 The best non-toxic face moisturizers
+					.swiper-slide( style='background-image: url( images/home-02-830x655.jpg )' )
+						.row
+							.col-sm-7
+								.h1 9 best foods for a healthy liver
+					.swiper-slide( style='background-image: url( images/home-03-830x655.jpg )' )
+						.row
+							.col-sm-7
+								.h1 All-natural DIYs to hydrate your skin this winter
+				
+				.swiper-navigations
+					.swiper-button-prev
+					.swiper-pagination
+					.swiper-button-next
+					
+					
+	='\n'
+	
+	// About
+	section.section.section-lg.bg-white
+		.container
+			h2.h6 About
+			.row.row-30
+				.col-md-6
+					h3 HealthReads was founded in 2005 to provide the latest nutrition news, healthy recipes, and food safety information backed up by scientific research.
+				.col-md-6
+					p What initially started as a website for healthy recipes, became an all-in-one resource providing nutrition tips, lifestyle recommendations, the latest news in the beauty industry, and a lot more.
+	='\n'
+	
+	// Recent posts
+	section.section.section-lg.bg-white
+		.container.isotope-wrap
+			h2.h6 Recent posts
+			.row.row-xxl-132.row-xl-100.row-lg-60.row-30.isotope
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-04-390x488.jpg',
+						badge: 'Wellness',
+						title: 'Living healthy: 8 reasons to eat more vegetables every day'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-05-390x224.jpg',
+						badge: 'Healthy eating',
+						title: 'Thrive market review: favorite items to buy'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-06-390x353.jpg',
+						badge: 'Wellness',
+						title: '11 benefits of blueberries – backed by science (and 3 delicious blueberry recipes)'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-07-390x307.jpg',
+						badge: 'Healthy eating',
+						title: 'How to balance your energy and chakras with food and herbs'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-08-390x415.jpg',
+						badge: 'Healthy eating',
+						title: 'Vitamin D and Omega-3 supplements may reduce heart attack and cancer risk'
+					})
+				.col-lg-4.col-xs-6.isotope-item
+					+post-vertical({
+						img: 'home-09-390x302.jpg',
+						badge: 'Wellness',
+						title: 'Veggie nutrition: eat the skins, stems, and tops!'
+					})
+	='\n'
+	
+	// Search
+	section.section.section-lg.bg-white
+		.container
+			form.search-wide( action='search-results.html', method='GET' )
+				h5.search-wide-title Looking for something?
+				.form-wrap
+					input.search-wide-input( type='text', autocomplete='off', name='s' )
+					button.search-wide-btn.int-search.novi-icon
+	='\n'
+	
+	// Healthy food
+	section.section.section-lg.bg-secondary-3
+		.container
+			.section-top-layout
+				h2.h6 Healthy food
+				#owl-nav-1.owl-nav
+					button.owl-arrow.owl-arrow-prev(aria-label='Prev')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M5.76036 9.76877C6.07988 9.46046 6.07988 8.96059 5.76036 8.65228L1.97527 5L5.76036 1.34772C6.07988 1.03941 6.07988 0.53954 5.76036 0.231232C5.44084 -0.0770772 4.9228 -0.0770772 4.60328 0.231232L0.23964 4.44176C-0.0798799 4.75007 -0.0798799 5.24993 0.23964 5.55824L4.60328 9.76877C4.9228 10.0771 5.44084 10.0771 5.76036 9.76877Z' )
+					button.owl-arrow.owl-arrow-next(aria-label='Next')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M0.23964 9.76877C-0.07988 9.46046 -0.07988 8.96059 0.23964 8.65228L4.02473 5L0.23964 1.34772C-0.0798804 1.03941 -0.0798804 0.539539 0.239639 0.231232C0.559159 -0.0770769 1.0772 -0.077077 1.39672 0.231232L5.76036 4.44176C6.07988 4.75007 6.07988 5.24993 5.76036 5.55824L1.39672 9.76877C1.0772 10.0771 0.55916 10.0771 0.23964 9.76877Z' )
+			.owl-carousel(
+				data-items='1',
+				data-md-items='2',
+				data-xl-items='3',
+				data-margin='30',
+				data-xxl-margin='50',
+				data-nav-custom='#owl-nav-1'
+			)
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-10-110x130',
+						title: '10 healthy christmas cookies'
+					})
+					+post-horizontal({
+						img:   'home-11-110x130',
+						title: 'How I’m meal prepping before baby'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-12-110x130',
+						title: 'Thrive market review: Favorite items to buy'
+					})
+					+post-horizontal({
+						img:   'home-13-110x130',
+						title: 'How to eat healthy at restaurants'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-14-110x130',
+						title: 'Pear salad with walnuts, avocado and grilled chicken'
+					})
+					+post-horizontal({
+						img:   'home-15-110x130',
+						title: 'How to balance your energy and chakras with food and herbs'
+					})
+	='\n'
+	
+	// Wellness
+	section.section.section-lg.bg-white
+		.container
+			.section-top-layout
+				h2.h6 Wellness
+				#owl-nav-2.owl-nav
+					button.owl-arrow.owl-arrow-prev(aria-label='Prev')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M5.76036 9.76877C6.07988 9.46046 6.07988 8.96059 5.76036 8.65228L1.97527 5L5.76036 1.34772C6.07988 1.03941 6.07988 0.53954 5.76036 0.231232C5.44084 -0.0770772 4.9228 -0.0770772 4.60328 0.231232L0.23964 4.44176C-0.0798799 4.75007 -0.0798799 5.24993 0.23964 5.55824L4.60328 9.76877C4.9228 10.0771 5.44084 10.0771 5.76036 9.76877Z' )
+					button.owl-arrow.owl-arrow-next(aria-label='Next')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M0.23964 9.76877C-0.07988 9.46046 -0.07988 8.96059 0.23964 8.65228L4.02473 5L0.23964 1.34772C-0.0798804 1.03941 -0.0798804 0.539539 0.239639 0.231232C0.559159 -0.0770769 1.0772 -0.077077 1.39672 0.231232L5.76036 4.44176C6.07988 4.75007 6.07988 5.24993 5.76036 5.55824L1.39672 9.76877C1.0772 10.0771 0.55916 10.0771 0.23964 9.76877Z' )
+			.owl-carousel(
+				data-items='1',
+				data-md-items='2',
+				data-xl-items='3',
+				data-margin='30',
+				data-xxl-margin='50',
+				data-nav-custom='#owl-nav-2'
+			)
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-16-110x130',
+						title: 'Healthy eating without a label'
+					})
+					+post-horizontal({
+						img:   'home-17-110x130',
+						title: 'The best volume eating recipes'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-18-110x130',
+						title: 'Buying and storing salad greens'
+					})
+					+post-horizontal({
+						img:   'home-19-110x130',
+						title: 'Strength training for women + my story'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-20-110x130',
+						title: 'Living healthy: 8 reasons to eat more vegetables every day'
+					})
+					+post-horizontal({
+						img:   'home-21-110x130',
+						title: 'How to lose weight without dieting'
+					})
+	='\n'
+	
+	// Clean beauty
+	section.section.section-lg.bg-secondary-2
+		.container
+			.section-top-layout
+				h2.h6 Clean beauty
+				#owl-nav-3.owl-nav
+					button.owl-arrow.owl-arrow-prev(aria-label='Prev')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M5.76036 9.76877C6.07988 9.46046 6.07988 8.96059 5.76036 8.65228L1.97527 5L5.76036 1.34772C6.07988 1.03941 6.07988 0.53954 5.76036 0.231232C5.44084 -0.0770772 4.9228 -0.0770772 4.60328 0.231232L0.23964 4.44176C-0.0798799 4.75007 -0.0798799 5.24993 0.23964 5.55824L4.60328 9.76877C4.9228 10.0771 5.44084 10.0771 5.76036 9.76877Z' )
+					button.owl-arrow.owl-arrow-next(aria-label='Next')
+						svg.svg-icon( width='6', height='10' )
+							path( d='M0.23964 9.76877C-0.07988 9.46046 -0.07988 8.96059 0.23964 8.65228L4.02473 5L0.23964 1.34772C-0.0798804 1.03941 -0.0798804 0.539539 0.239639 0.231232C0.559159 -0.0770769 1.0772 -0.077077 1.39672 0.231232L5.76036 4.44176C6.07988 4.75007 6.07988 5.24993 5.76036 5.55824L1.39672 9.76877C1.0772 10.0771 0.55916 10.0771 0.23964 9.76877Z' )
+			.owl-carousel(
+				data-items='1',
+				data-md-items='2',
+				data-xl-items='3',
+				data-margin='30',
+				data-xxl-margin='50',
+				data-nav-custom='#owl-nav-3'
+			)
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-22-110x130',
+						title: 'The best clean beauty brands and products'
+					})
+					+post-horizontal({
+						img:   'home-23-110x130',
+						title: '7 effective remedies for teen acne'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-24-110x130',
+						title: '14 amazing benefits of aloe vera'
+					})
+					+post-horizontal({
+						img:   'home-25-110x130',
+						title: 'Oil of oregano: more than a cold remedy'
+					})
+				.owl-post-wrap
+					+post-horizontal({
+						img:   'home-26-110x130',
+						title: 'Clean skincare: what you need to know'
+					})
+					+post-horizontal({
+						img:   'home-27-110x130',
+						title: 'New mom’s guide to organic products'
+					})
+	='\n'
+	
+	include ../components/footer/_footer

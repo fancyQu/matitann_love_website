@@ -1,0 +1,138 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins/breakpoints";
+@import "../bootstrap/scss/mixins/grid-framework";
+@import "../bootstrap/scss/mixins/grid";
+@import "../bootstrap/scss/grid";
+@import "grid-spacing";
+
+//{DEL DIST BUILDER}
+// TODO боковые отступы при .container-fluid меньше, чем меджу колонками сетки, просмотреть надобность делать их одинаковыми
+//{DEL}
+// Base
+.row-5 {
+	@include grid-spacing( 5px );
+}
+
+.row-10 {
+	@include grid-spacing( 10px );
+}
+
+.row-15 {
+	@include grid-spacing( 15px );
+}
+
+.row-20 {
+	@include grid-spacing( 20px );
+}
+
+.row-22 {
+	@include grid-spacing( 22px );
+}
+
+.row-30 {
+	@include grid-spacing( 30px );
+}
+
+.row-40 {
+	@include grid-spacing( 40px );
+}
+
+.row-50 {
+	@include grid-spacing( 50px );
+}
+
+@include media-breakpoint-up(lg) {
+	.row-lg-60 {
+		@include grid-spacing( 60px );
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.row-xl-100 {
+		@include grid-spacing( 100px );
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.row-xxl-50 {
+		@include grid-spacing( 50px );
+	}
+	
+	.row-xxl-132 {
+		@include grid-spacing( 132px );
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.container {
+		padding-left:  25px;
+		padding-right: 25px;
+	}
+
+	.row {
+		margin-right: -25px;
+		margin-left:  -25px;
+
+		> [ class*='col-' ] {
+			padding-right: 25px;
+			padding-left:  25px;
+		}
+	}
+}
+
+
+// Spacing
+* + .row {
+	margin-top: px-to-rem( 40px );
+
+	@include media-breakpoint-up(xl) {
+		margin-top: px-to-rem( 62px );
+	}
+}
+
+
+// Modifying
+.gutters-20 {
+	margin-right: -10px;
+	margin-left: -10px;
+
+	> [ class*='col-' ] {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
+
+// Grid sample
+.grid-sample {
+	text-align: center;
+
+	[ class*='col-' ] {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding: 26px 0;
+		border: 2px solid $white;
+		font-size: 12px;
+		background: $gray-200;
+	}
+
+	.col-1:nth-child( -n + 12 ) {
+		background: adjust-color( $danger, $saturation: 3%, $lightness: 42% ); // #FDE9EF
+	}
+}
+
+
+// Grid divided
+.grid-divided {
+	// Media
+	@include media-breakpoint-up( sm ) {
+		> [ class*='col-' ] + [ class*='col-' ] {
+			border-left: 1px solid $border-color;
+		}
+	}
+}
+
